@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>Some very cool features</title>
+<script>
+function justDoIt1()
+{
+let j={
+k : 4000
+};
+/* 1.
+let m=j.k || function(){
+return 100;
+};
+*/
+let m=j.k || 3030;
+alert(m);
+}
+
+function justDoIt2()
+{
+//IIFE Immediately Invoke function expression
+(function(k){
+alert(k);
+})(150);
+}
+
+function sam(a=10, b=20, c=30)
+{
+alert(a+","+b+","+c);
+}
+function justDoIt3()
+{
+sam(1000, 2000, 3000);
+sam(1000, 2000);
+sam(1000);
+sam();
+}
+
+function veryCool(a, b, c)
+{
+alert(a+","+b+","+c);
+}
+function justDoIt4()
+{
+let l=[10,20,30];
+veryCool(...l); //sprading spread it and make lists element as argument 
+}
+
+function superCool(...x)
+{
+alert(x); //array
+alert(x.length);
+}
+function justDoIt5()
+{
+superCool(10,20,39,93,29);
+}
+
+function whatIsThis()
+{
+return [101,102,103,104];
+}
+function justDoIt6()
+{
+let [a,b,c,d]=whatIsThis(); //collecting or unpacking array into indivisual variables
+alert(a+","+b+","+c+","+d);
+let [p,,q,r]=whatIsThis();
+alert(p+","+q+","+r);
+let [,,,j]=whatIsThis();
+alert(j);
+let [k,,,]=whatIsThis();
+alert(k);
+}
+function justDoIt7()
+{
+let v={
+wattage: 60,
+setWattage(wattage){
+this.wattage=wattage;
+},
+getWattage(){
+return this.wattage;
+}
+};
+alert(v.wattage);
+alert(v.getWattage());
+v.setWattage(100);
+alert(v.wattage);
+alert(v.getWattage());
+}
+
+function justDoIt8()
+{
+let k=(p,q)=> p+q; // as good as writing return p+q;
+let l=(p,q)=> {
+return p*q;
+};
+alert(k(10,20));
+alert(l(10,20));
+}
+</script>
+</head>
+<body>
+<button onclick='justDoIt1()'>1</button>
+<button onclick='justDoIt2()'>2</button>
+<button onclick='justDoIt3()'>3</button>
+<button onclick='justDoIt4()'>4</button>
+<button onclick='justDoIt5()'>5</button>
+<button onclick='justDoIt6()'>6</button>
+<button onclick='justDoIt7()'>7</button>
+<button onclick='justDoIt8()'>8</button>
+</body>
+</html>
